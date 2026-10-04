@@ -14,6 +14,8 @@ Machine-readable results are in `analysis/`; `output/latest.json` always exposes
 `reference/zuiopt.json` is a neutral factory projection anchored to Backend commit
 `6d896f29812dab653e2e88c6ee989c972a343c97`, with hashes of the exact source inputs.
 It is not a source checkout or a production-consumable rules pack.
+`source_sha256` records the original Windows checkout bytes; canonical commit-blob hashes and
+Git line-ending equivalence are explicitly bound in `reference/git_blob_provenance.json`.
 
 ## Acquisition and automation
 
@@ -40,6 +42,10 @@ supports manual dispatch. A weekly schedule is added only after a successful ful
 publication, recorded in `.github/qualification.json`. The workflow downloads no ROM and runs no product build.
 It commits only `output/`, `analysis/`, `history/` and the derived report. Artifacts contain derived reports only.
 Schedule checks can be delayed by GitHub; they are discovery checks, not a production update SLA.
+
+Full manual qualification [37206202678](https://github.com/xmy953538104/ZuiControl-Rules/actions/runs/37206202678)
+passed on 2026-10-04, including derived publication and a cross-host identical normalized-model hash.
+The qualified weekly check runs Sunday 03:17 UTC (11:17 Asia/Shanghai).
 
 ## Local use
 

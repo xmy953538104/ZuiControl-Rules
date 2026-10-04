@@ -1,0 +1,54 @@
+{
+  "backend_head": "6d896f29812dab653e2e88c6ee989c972a343c97",
+  "source_sha256_in_reference": "Exact Windows checkout bytes; canonical Git blob hashes separately bound below",
+  "source_inputs": [
+    {
+      "file": "payload/system/etc/zuiopt/factory_rules.conf",
+      "checkout_sha256": "1ac23f379482649608b44860eac0be165ba6b71022eee140735edbc362970f65",
+      "git_blob_sha256": "1ac23f379482649608b44860eac0be165ba6b71022eee140735edbc362970f65",
+      "exact_commit_and_checkout_match_after_git_line_ending_normalization": true
+    },
+    {
+      "file": "native/zuiopt/ZUIopt_rules.h",
+      "checkout_sha256": "2b1cf2e0402bbb60a77e0524ab64f83539a510ca87d62c567c79f46e6f17fe24",
+      "git_blob_sha256": "c0ddf3a91c4c1fd8dad9a784b544d32f8a87e5e63a65746bb2de7e1caedfddfb",
+      "exact_commit_and_checkout_match_after_git_line_ending_normalization": true
+    },
+    {
+      "file": "native/zuiopt/ZUIopt_model.h",
+      "checkout_sha256": "818aa9df0a6ef2cbc6ce3230da8afe773ea7158a5a9610b07536a7f5cbd0ff81",
+      "git_blob_sha256": "34463bc9f179586206d966dc15c9f5b2c99112400f214d3bf353c469c274aebb",
+      "exact_commit_and_checkout_match_after_git_line_ending_normalization": true
+    },
+    {
+      "file": "app/src/main/java/com/zui/zuicontrol/ZuioptRuleModel.kt",
+      "checkout_sha256": "a351f0f81bab4adb2cde2e9cea7e78fd4b69c893a5e7a9ff69e9cee06efc2d06",
+      "git_blob_sha256": "a351f0f81bab4adb2cde2e9cea7e78fd4b69c893a5e7a9ff69e9cee06efc2d06",
+      "exact_commit_and_checkout_match_after_git_line_ending_normalization": true
+    },
+    {
+      "file": "scripts/rules/PublishRules.py",
+      "checkout_sha256": "fa166aa59e844d3096555c21a89e72bbe39243321ad1a7d779d49398b0ba76f9",
+      "git_blob_sha256": "fa166aa59e844d3096555c21a89e72bbe39243321ad1a7d779d49398b0ba76f9",
+      "exact_commit_and_checkout_match_after_git_line_ending_normalization": true
+    },
+    {
+      "file": "scripts/rules/ZUIOPT_convert_legacy_rules.py",
+      "checkout_sha256": "3551a52c1b1ffe30c849963f92319cb53f49caf5694fc012c4daf60ea90821e8",
+      "git_blob_sha256": "3551a52c1b1ffe30c849963f92319cb53f49caf5694fc012c4daf60ea90821e8",
+      "exact_commit_and_checkout_match_after_git_line_ending_normalization": true
+    },
+    {
+      "file": "native/zuiopt/ZUIopt_core.h",
+      "checkout_sha256": "94d4cde66340136eb023dfb3c9cbb30fbc8d77a64484fa4e79979e444883da9e",
+      "git_blob_sha256": "bf977859edad2520fc0a8ac2f308b90becadd2c70bf99ee0525bbfde0344e21d",
+      "exact_commit_and_checkout_match_after_git_line_ending_normalization": true
+    },
+    {
+      "file": "native/zuiopt/ZUIopt_daemon.h",
+      "checkout_sha256": "fb300c83c309fed33e190d55283a172e6748bccc2a7bc9fdea7bf7876e043a6a",
+      "git_blob_sha256": "a0aadeb473dce88c5f5b0b4022e52465cf997c16b6510fdf90336f7f26f4e35b",
+      "exact_commit_and_checkout_match_after_git_line_ending_normalization": true
+    }
+  ]
+}
