@@ -2,7 +2,7 @@
   "accepted_supported_subset": null,
   "analysis_model_sha256": "a4ed90c04066f85fa203b9ef150570bc5f1241ba22d7ba60e2e22c2704a57ec9",
   "extraction_qualified": true,
-  "input_accepted": false,
+  "input_accepted": true,
   "lossless": false,
   "package_count": 333,
   "production_rules_output": false,
