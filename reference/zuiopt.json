@@ -1,0 +1,2145 @@
+{
+  "backend_head": "6d896f29812dab653e2e88c6ee989c972a343c97",
+  "provenance": "Read-only normalized factory baseline, not a production pack or source mirror",
+  "source_sha256": {
+    "payload/system/etc/zuiopt/factory_rules.conf": "1ac23f379482649608b44860eac0be165ba6b71022eee140735edbc362970f65",
+    "native/zuiopt/ZUIopt_rules.h": "2b1cf2e0402bbb60a77e0524ab64f83539a510ca87d62c567c79f46e6f17fe24",
+    "native/zuiopt/ZUIopt_model.h": "818aa9df0a6ef2cbc6ce3230da8afe773ea7158a5a9610b07536a7f5cbd0ff81",
+    "app/src/main/java/com/zui/zuicontrol/ZuioptRuleModel.kt": "a351f0f81bab4adb2cde2e9cea7e78fd4b69c893a5e7a9ff69e9cee06efc2d06",
+    "scripts/rules/PublishRules.py": "fa166aa59e844d3096555c21a89e72bbe39243321ad1a7d779d49398b0ba76f9",
+    "scripts/rules/ZUIOPT_convert_legacy_rules.py": "3551a52c1b1ffe30c849963f92319cb53f49caf5694fc012c4daf60ea90821e8",
+    "native/zuiopt/ZUIopt_core.h": "94d4cde66340136eb023dfb3c9cbb30fbc8d77a64484fa4e79979e444883da9e",
+    "native/zuiopt/ZUIopt_daemon.h": "fb300c83c309fed33e190d55283a172e6748bccc2a7bc9fdea7bf7876e043a6a"
+  },
+  "profiles": {
+    "G01": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C1",
+          "match": "contains",
+          "pattern": "UnityGfx",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "2-4"
+        },
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "UnityMain",
+          "selector": "rank:1",
+          "priority": 998,
+          "cpus": "7"
+        },
+        {
+          "class_": "C1",
+          "match": "contains",
+          "pattern": "TfLite",
+          "selector": "rank:1",
+          "priority": 997,
+          "cpus": "2-4"
+        },
+        {
+          "class_": "C1",
+          "match": "contains",
+          "pattern": "Thread-",
+          "selector": "rank:1",
+          "priority": 996,
+          "cpus": "2-4"
+        }
+      ]
+    },
+    "G02": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C1",
+          "match": "contains",
+          "pattern": "UnityGfx",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "2-4"
+        },
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "UnityMain",
+          "selector": "rank:2",
+          "priority": 998,
+          "cpus": "7"
+        },
+        {
+          "class_": "C0",
+          "match": "contains",
+          "pattern": "__DummyMain",
+          "selector": "all",
+          "priority": 997,
+          "cpus": "2-6"
+        }
+      ]
+    },
+    "G03": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "UnityMain",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "7"
+        }
+      ]
+    },
+    "G04": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "Thread-",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "7"
+        }
+      ]
+    },
+    "G05": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "RBX Worker",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "7"
+        },
+        {
+          "class_": "C1",
+          "match": "contains",
+          "pattern": "FunctionMarshal",
+          "selector": "rank:1",
+          "priority": 998,
+          "cpus": "2-4"
+        }
+      ]
+    },
+    "G06": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C1",
+          "match": "contains",
+          "pattern": "RenderThread",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "2-4"
+        },
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "Thread-",
+          "selector": "rank:1",
+          "priority": 998,
+          "cpus": "7"
+        }
+      ]
+    },
+    "G07": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C1",
+          "match": "contains",
+          "pattern": "RenderThread",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "2-4"
+        },
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "GameThread",
+          "selector": "rank:1",
+          "priority": 998,
+          "cpus": "7"
+        }
+      ]
+    },
+    "G08": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "RenderThread",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "7"
+        },
+        {
+          "class_": "C1",
+          "match": "contains",
+          "pattern": "GameThread",
+          "selector": "rank:1",
+          "priority": 998,
+          "cpus": "2-4"
+        }
+      ]
+    },
+    "G09": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C1",
+          "match": "contains",
+          "pattern": "GameThread",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "2-4"
+        },
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "RHIThread",
+          "selector": "rank:1",
+          "priority": 998,
+          "cpus": "7"
+        }
+      ]
+    },
+    "G10": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "GameThread",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "7"
+        },
+        {
+          "class_": "C1",
+          "match": "contains",
+          "pattern": "RHIThread",
+          "selector": "rank:1",
+          "priority": 998,
+          "cpus": "2-4"
+        }
+      ]
+    },
+    "G11": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "7"
+        }
+      ]
+    },
+    "G12": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "WZM_Main",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "7"
+        }
+      ]
+    },
+    "G13": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "SHPD Render",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "7"
+        }
+      ]
+    },
+    "G14": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "SDLThread",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "7"
+        }
+      ]
+    },
+    "G15": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C1",
+          "match": "contains",
+          "pattern": "Rendering Pool",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "2-4"
+        },
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "MINECRAFT MAIN",
+          "selector": "rank:1",
+          "priority": 998,
+          "cpus": "7"
+        }
+      ]
+    },
+    "G16": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C1",
+          "match": "contains",
+          "pattern": "SCERender",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "2-4"
+        },
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "SCELogic",
+          "selector": "rank:1",
+          "priority": 998,
+          "cpus": "7"
+        }
+      ]
+    },
+    "G17": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "Draw",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "7"
+        },
+        {
+          "class_": "C1",
+          "match": "contains",
+          "pattern": "Update",
+          "selector": "rank:1",
+          "priority": 998,
+          "cpus": "2-4"
+        }
+      ]
+    },
+    "G18": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "MiniRainbowMain",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "7"
+        },
+        {
+          "class_": "C1",
+          "match": "contains",
+          "pattern": "MiniRenderThrea",
+          "selector": "rank:1",
+          "priority": 998,
+          "cpus": "2-4"
+        }
+      ]
+    },
+    "G19": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "Mainloop",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "7"
+        },
+        {
+          "class_": "C1",
+          "match": "contains",
+          "pattern": "Thread-",
+          "selector": "rank:1",
+          "priority": 998,
+          "cpus": "2-4"
+        }
+      ]
+    },
+    "G20": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "Mainloop",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "7"
+        }
+      ]
+    },
+    "G21": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "Render T",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "7"
+        },
+        {
+          "class_": "C1",
+          "match": "contains",
+          "pattern": "Thread-",
+          "selector": "rank:1",
+          "priority": 998,
+          "cpus": "2-4"
+        }
+      ]
+    },
+    "G22": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C1",
+          "match": "contains",
+          "pattern": "Thread-",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "2-4"
+        },
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "",
+          "selector": "rank:1",
+          "priority": 998,
+          "cpus": "7"
+        }
+      ]
+    },
+    "G23": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C0",
+          "match": "contains",
+          "pattern": "__DoubleMain",
+          "selector": "all",
+          "priority": 999,
+          "cpus": "2-6"
+        },
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "Thread-",
+          "selector": "rank:1",
+          "priority": 998,
+          "cpus": "7"
+        }
+      ]
+    },
+    "G24": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "MainThread",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "7"
+        }
+      ]
+    },
+    "G25": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "GLThread",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "7"
+        }
+      ]
+    },
+    "G26": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "DAVA Engine Mai",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "7"
+        },
+        {
+          "class_": "C1",
+          "match": "contains",
+          "pattern": "DAVA::RhiThread",
+          "selector": "rank:1",
+          "priority": 998,
+          "cpus": "2-4"
+        }
+      ]
+    },
+    "G27": {
+      "default_cpus": "2-6",
+      "rules": [
+        {
+          "class_": "C1",
+          "match": "contains",
+          "pattern": "MainThread",
+          "selector": "rank:1",
+          "priority": 999,
+          "cpus": "2-4"
+        },
+        {
+          "class_": "C2",
+          "match": "contains",
+          "pattern": "Thread-",
+          "selector": "rank:1",
+          "priority": 998,
+          "cpus": "7"
+        }
+      ]
+    }
+  },
+  "packages": {
+    "Nekootan.kfkj": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 10000
+    },
+    "age.of.civilizations2.jakowski.lukasz": {
+      "match": "exact",
+      "profile": "G25",
+      "priority": 9999
+    },
+    "ahf.dummynation": {
+      "match": "exact",
+      "profile": "G25",
+      "priority": 9998
+    },
+    "brownmonster.app.game.rushrally3": {
+      "match": "exact",
+      "profile": "G27",
+      "priority": 9997
+    },
+    "com.AlfaBravo.Combat": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9996
+    },
+    "com.BlackSaltGames.DREDGE": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9995
+    },
+    "com.CarXTech.highWay": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9994
+    },
+    "com.ChillyRoom.DungeonShooter": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9993
+    },
+    "com.EtherGaming.PocketRogues": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9992
+    },
+    "com.Flanne.MinutesTillDawn.roguelike.shooting.gp": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9991
+    },
+    "com.GameCoaster.ProtectDungeon": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9990
+    },
+    "com.GentleManiac.HorizonWalker": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9989
+    },
+    "com.GlobalSoFunny.Sausage": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9988
+    },
+    "com.HoYoverse.hkrpgoversea": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9987
+    },
+    "com.LanPiaoPiao.PlantsVsZombiesRH": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9986
+    },
+    "com.MOBGames.PoppyMobileChap1": {
+      "match": "exact",
+      "profile": "G09",
+      "priority": 9985
+    },
+    "com.ProjectMoon.LimbusCompany": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9984
+    },
+    "com.RoamingStar.BlueArchive": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9983
+    },
+    "com.Roboatino.ShogunShowdown": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9982
+    },
+    "com.ShinyShoe.MonsterTrain.mtap": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9981
+    },
+    "com.Shooter.ModernWarfront": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9980
+    },
+    "com.Shooter.ModernWarships": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9979
+    },
+    "com.Sunborn.SnqxExilium": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9978
+    },
+    "com.TechTreeGames.TheTower": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9977
+    },
+    "com.YiMoXuan.XYZJF": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9976
+    },
+    "com.YoStarEN.Arknights": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9975
+    },
+    "com.YoStarEN.MahjongSoul": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9974
+    },
+    "com.YoStarEN.StellaSora": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9973
+    },
+    "com.YoStarJP.MajSoul": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9972
+    },
+    "com.YostarJP.BlueArchive": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9971
+    },
+    "com.ZeroCastleGameStudio.StrikeBusterPrototype": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9970
+    },
+    "com.ZeroCastleGameStudioINTL.StrikeBusterPrototype": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9969
+    },
+    "com.actgames.bbee": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9968
+    },
+    "com.activision.callofduty.shooter": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9967
+    },
+    "com.activision.callofduty.warzone": {
+      "match": "exact",
+      "profile": "G12",
+      "priority": 9966
+    },
+    "com.albiononline": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9965
+    },
+    "com.aligames.kuang.kybc": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9964
+    },
+    "com.and.games505.Terraria": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9963
+    },
+    "com.axlebolt.standoff2": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9962
+    },
+    "com.bairimeng.dmmdzz": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9961
+    },
+    "com.bandainamcoent.idolmaster_gakuen": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9960
+    },
+    "com.bandainamcoent.imas_millionlive_theaterdays": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9959
+    },
+    "com.bandainamcoent.sao": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9958
+    },
+    "com.bandainamcoent.shinycolorsprism": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9957
+    },
+    "com.bandainamcogames.dbzdokkanww": {
+      "match": "exact",
+      "profile": "G25",
+      "priority": 9956
+    },
+    "com.bf.sgs.hdexp.bd": {
+      "match": "exact",
+      "profile": "G25",
+      "priority": 9955
+    },
+    "com.bhvr.deadbydaylight": {
+      "match": "exact",
+      "profile": "G04",
+      "priority": 9954
+    },
+    "com.bilibili.azurlane": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9953
+    },
+    "com.bilibili.deadcells.mobile": {
+      "match": "exact",
+      "profile": "G14",
+      "priority": 9952
+    },
+    "com.bilibili.fatego": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9951
+    },
+    "com.bilibili.heaven": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9950
+    },
+    "com.bilibili.priconne": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9949
+    },
+    "com.bilibili.star.bili": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9948
+    },
+    "com.bilibili.warmsnow": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9947
+    },
+    "com.biligamekr.aggp": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9946
+    },
+    "com.bingkolo.kleins.cn": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9945
+    },
+    "com.blade.bd": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9944
+    },
+    "com.bladetw.bd": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9943
+    },
+    "com.blizzard.diablo.immortal": {
+      "match": "exact",
+      "profile": "G04",
+      "priority": 9942
+    },
+    "com.blizzard.wtcg.hearthstone": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9941
+    },
+    "com.bscotch.crashlands2": {
+      "match": "exact",
+      "profile": "G25",
+      "priority": 9940
+    },
+    "com.bushiroad.d4dj": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9939
+    },
+    "com.bushiroad.lovelive.schoolidolfestival2": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9938
+    },
+    "com.chucklefish.stardewvalley": {
+      "match": "exact",
+      "profile": "G11",
+      "priority": 9937
+    },
+    "com.cnvcs.xiangqi": {
+      "match": "exact",
+      "profile": "G25",
+      "priority": 9936
+    },
+    "com.crunchyroll.gv.shogunshowdown.game": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9935
+    },
+    "com.crunchyroll.princessconnectredive": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9934
+    },
+    "com.cytx.td": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9933
+    },
+    "com.denachina.g13002010": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9932
+    },
+    "com.denchi.vtubestudio": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9931
+    },
+    "com.dfjz.moba": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9930
+    },
+    "com.dgames.g15002002": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9929
+    },
+    "com.digitalextremes.warframemobile": {
+      "match": "exact",
+      "profile": "G22",
+      "priority": 9928
+    },
+    "com.dragonli.projectsnow": {
+      "match": "exact",
+      "profile": "G10",
+      "priority": 9927
+    },
+    "com.dts.freefire": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9926
+    },
+    "com.ea.game.pvz2_row": {
+      "match": "exact",
+      "profile": "G25",
+      "priority": 9925
+    },
+    "com.ea.games.r3": {
+      "match": "exact",
+      "profile": "G25",
+      "priority": 9924
+    },
+    "com.epicgames.fortnite": {
+      "match": "exact",
+      "profile": "G09",
+      "priority": 9923
+    },
+    "com.fantablade.icey": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9922
+    },
+    "com.gaijingames.wtm": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9921
+    },
+    "com.gameloft.android.ANMP.GloftA9HM": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9920
+    },
+    "com.garena.game.codm": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9919
+    },
+    "com.garena.game.df": {
+      "match": "exact",
+      "profile": "G08",
+      "priority": 9918
+    },
+    "com.garena.game.kgtw": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9917
+    },
+    "com.garena.game.kgvn": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9916
+    },
+    "com.garena.game.nfsm": {
+      "match": "exact",
+      "profile": "G10",
+      "priority": 9915
+    },
+    "com.gbits.funnyfighter.android.overseas": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9914
+    },
+    "com.gryphline.endfield.gp": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9913
+    },
+    "com.gryphline.exastris.gp": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9912
+    },
+    "com.guigugame.guigubahuang": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9911
+    },
+    "com.guyou.deadstrike": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9910
+    },
+    "com.h73.jhqyna": {
+      "match": "exact",
+      "profile": "G27",
+      "priority": 9909
+    },
+    "com.halo.windf.hero": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9908
+    },
+    "com.heavenburnsred": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9907
+    },
+    "com.hermes.h1game": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9906
+    },
+    "com.hermes.j1game": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9905
+    },
+    "com.hermes.mk": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9904
+    },
+    "com.herogame.gplay.punishing.grayraven.tw": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9903
+    },
+    "com.hg.lbw": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9902
+    },
+    "com.hottagames.nte": {
+      "match": "exact",
+      "profile": "G10",
+      "priority": 9901
+    },
+    "com.hottagames.yh": {
+      "match": "exact",
+      "profile": "G10",
+      "priority": 9900
+    },
+    "com.hottapkgs.hotta": {
+      "match": "exact",
+      "profile": "G09",
+      "priority": 9899
+    },
+    "com.humo.yqqsqz.yw": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9898
+    },
+    "com.hypergryph.arknights": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9897
+    },
+    "com.hypergryph.endfield": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9896
+    },
+    "com.hypergryph.exastris": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9895
+    },
+    "com.idreamsky.klbqm": {
+      "match": "exact",
+      "profile": "G06",
+      "priority": 9894
+    },
+    "com.ignm.raspberrymash.jp": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9893
+    },
+    "com.ilongyuan.cytus2": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9892
+    },
+    "com.ilongyuan.implosion": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9891
+    },
+    "com.infoldgames.infinitynikkien": {
+      "match": "exact",
+      "profile": "G09",
+      "priority": 9890
+    },
+    "com.jacksparrow.jpmajiang": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9889
+    },
+    "com.je.skgame": {
+      "match": "exact",
+      "profile": "G02",
+      "priority": 9888
+    },
+    "com.jumpw.mobile300": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9887
+    },
+    "com.kiloo.subwaysurf.gw": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9886
+    },
+    "com.komoe.kmumamusumegp": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9885
+    },
+    "com.krafton.dndm": {
+      "match": "exact",
+      "profile": "G07",
+      "priority": 9884
+    },
+    "com.kurogame.aki": {
+      "match": "exact",
+      "profile": "G09",
+      "priority": 9883
+    },
+    "com.kurogame.haru": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9882
+    },
+    "com.kurogame.mingchao": {
+      "match": "exact",
+      "profile": "G07",
+      "priority": 9881
+    },
+    "com.kurogame.wutheringwaves.global": {
+      "match": "exact",
+      "profile": "G07",
+      "priority": 9880
+    },
+    "com.leiting.daluandou": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9879
+    },
+    "com.leiting.wf": {
+      "match": "exact",
+      "profile": "G11",
+      "priority": 9878
+    },
+    "com.levelinfinite.sgameGlobal": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9877
+    },
+    "com.lilithgames.hgame.cn": {
+      "match": "exact",
+      "profile": "G25",
+      "priority": 9876
+    },
+    "com.lilithgames.solarland.android.cn": {
+      "match": "exact",
+      "profile": "G10",
+      "priority": 9875
+    },
+    "com.littleleogames.astreasixsidedoracles": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9874
+    },
+    "com.longe.allstarhmt": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9873
+    },
+    "com.madfingergames.legends": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9872
+    },
+    "com.miHoYo.GenshinImpact": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9871
+    },
+    "com.miHoYo.Nap": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9870
+    },
+    "com.miHoYo.Yuanshen": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9869
+    },
+    "com.miHoYo.bh3": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9868
+    },
+    "com.miHoYo.enterprise.NGHSoD": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9867
+    },
+    "com.miHoYo.hkrpg": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9866
+    },
+    "com.miHoYo.ys": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9865
+    },
+    "com.miHoYo.zenless": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9864
+    },
+    "com.minidragon.idlefantasy": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9863
+    },
+    "com.miniworldgame.creata.vn": {
+      "match": "exact",
+      "profile": "G18",
+      "priority": 9862
+    },
+    "com.miraclegames.farlight84": {
+      "match": "exact",
+      "profile": "G10",
+      "priority": 9861
+    },
+    "com.mobile.legends": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9860
+    },
+    "com.modx.daluandou": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9859
+    },
+    "com.mojang.minecraftpe": {
+      "match": "exact",
+      "profile": "G15",
+      "priority": 9858
+    },
+    "com.movtery.zalithlauncher": {
+      "match": "exact",
+      "profile": "G11",
+      "priority": 9857
+    },
+    "com.nanostudios.games.twenty.minutes": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9856
+    },
+    "com.neowizgames.game.browndust2": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9855
+    },
+    "com.netease.AVALON": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9854
+    },
+    "com.netease.EVE": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9853
+    },
+    "com.netease.aceracer": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9852
+    },
+    "com.netease.allstar": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9851
+    },
+    "com.netease.dfjs": {
+      "match": "exact",
+      "profile": "G09",
+      "priority": 9850
+    },
+    "com.netease.dunkcd": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9849
+    },
+    "com.netease.dwrg": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9848
+    },
+    "com.netease.eve.en": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9847
+    },
+    "com.netease.g78na": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9846
+    },
+    "com.netease.g93na": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9845
+    },
+    "com.netease.h73hmt": {
+      "match": "exact",
+      "profile": "G27",
+      "priority": 9844
+    },
+    "com.netease.h75na": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9843
+    },
+    "com.netease.hyxd": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9842
+    },
+    "com.netease.idv": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9841
+    },
+    "com.netease.jddsaef": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9840
+    },
+    "com.netease.ko": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9839
+    },
+    "com.netease.l22": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9838
+    },
+    "com.netease.lglr": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9837
+    },
+    "com.netease.ma84": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9836
+    },
+    "com.netease.moba": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9835
+    },
+    "com.netease.mrzh": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9834
+    },
+    "com.netease.newspike": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9833
+    },
+    "com.netease.nshm": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9832
+    },
+    "com.netease.nshmhmt": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9831
+    },
+    "com.netease.onmyoji": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9830
+    },
+    "com.netease.party": {
+      "match": "exact",
+      "profile": "G24",
+      "priority": 9829
+    },
+    "com.netease.pes": {
+      "match": "exact",
+      "profile": "G10",
+      "priority": 9828
+    },
+    "com.netease.qrsj": {
+      "match": "exact",
+      "profile": "G27",
+      "priority": 9827
+    },
+    "com.netease.race": {
+      "match": "exact",
+      "profile": "G09",
+      "priority": 9826
+    },
+    "com.netease.sky": {
+      "match": "exact",
+      "profile": "G24",
+      "priority": 9825
+    },
+    "com.netease.soulofhunter": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9824
+    },
+    "com.netease.tank": {
+      "match": "exact",
+      "profile": "G04",
+      "priority": 9823
+    },
+    "com.netease.tj": {
+      "match": "exact",
+      "profile": "G25",
+      "priority": 9822
+    },
+    "com.netease.tom": {
+      "match": "exact",
+      "profile": "G25",
+      "priority": 9821
+    },
+    "com.netease.wotb": {
+      "match": "exact",
+      "profile": "G26",
+      "priority": 9820
+    },
+    "com.netease.wyclx": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9819
+    },
+    "com.netease.x19": {
+      "match": "exact",
+      "profile": "G11",
+      "priority": 9818
+    },
+    "com.netease.yhtj": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9817
+    },
+    "com.netease.yyslscn": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9816
+    },
+    "com.netease.yzs": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9815
+    },
+    "com.nexon.bluearchive": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9814
+    },
+    "com.nexon.kartdrift": {
+      "match": "exact",
+      "profile": "G10",
+      "priority": 9813
+    },
+    "com.nexon.mdnf": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9812
+    },
+    "com.nexon.mod": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9811
+    },
+    "com.nianticlabs.monsterhunter": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9810
+    },
+    "com.nianticproject.ingress": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9809
+    },
+    "com.oninou.FAPI": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9808
+    },
+    "com.papegames.infinitynikki": {
+      "match": "exact",
+      "profile": "G09",
+      "priority": 9807
+    },
+    "com.pauloondra.zerostressking": {
+      "match": "exact",
+      "profile": "G25",
+      "priority": 9806
+    },
+    "com.pi.czrxdfirst": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9805
+    },
+    "com.pinkcore.tkfm": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9804
+    },
+    "com.playdigious.deadcells.mobile": {
+      "match": "exact",
+      "profile": "G14",
+      "priority": 9803
+    },
+    "com.playmini.miniworld": {
+      "match": "exact",
+      "profile": "G18",
+      "priority": 9802
+    },
+    "com.proxima.dfm": {
+      "match": "exact",
+      "profile": "G08",
+      "priority": 9801
+    },
+    "com.proximabeta.nikke": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9800
+    },
+    "com.prpr.musedash": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9799
+    },
+    "com.pubg": {
+      "match": "exact",
+      "profile": "G07",
+      "priority": 9798
+    },
+    "com.pubg.newstate": {
+      "match": "exact",
+      "profile": "G10",
+      "priority": 9797
+    },
+    "com.pwrd.hotta.laohu": {
+      "match": "exact",
+      "profile": "G09",
+      "priority": 9796
+    },
+    "com.pwrd.huanta": {
+      "match": "exact",
+      "profile": "G09",
+      "priority": 9795
+    },
+    "com.pwrd.p5x": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9794
+    },
+    "com.pwrd.persona5x.laohu": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9793
+    },
+    "com.r2games.myhero.bilibili": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9792
+    },
+    "com.rayark.cytus2": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9791
+    },
+    "com.rayark.implosion": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9790
+    },
+    "com.rekoo.pubgm": {
+      "match": "exact",
+      "profile": "G04",
+      "priority": 9789
+    },
+    "com.riichicity.happywoods": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9788
+    },
+    "com.riotgames.league.teamfighttactics": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9787
+    },
+    "com.riotgames.league.wildrift": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9786
+    },
+    "com.roblox.client": {
+      "match": "exact",
+      "profile": "G05",
+      "priority": 9785
+    },
+    "com.rockstargames.rdr": {
+      "match": "exact",
+      "profile": "G21",
+      "priority": 9784
+    },
+    "com.savysoda.pss2.android": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9783
+    },
+    "com.seasun.jx3": {
+      "match": "exact",
+      "profile": "G04",
+      "priority": 9782
+    },
+    "com.seasun.snowbreak.google": {
+      "match": "exact",
+      "profile": "G10",
+      "priority": 9781
+    },
+    "com.sega.ColorfulStage.en": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9780
+    },
+    "com.sega.pjsekai": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9779
+    },
+    "com.shangyoo.neon": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9778
+    },
+    "com.shatteredpixel.shatteredpixeldungeon": {
+      "match": "exact",
+      "profile": "G13",
+      "priority": 9777
+    },
+    "com.shenlan.m.reverse1999": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9776
+    },
+    "com.sofunny.Sausage": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9775
+    },
+    "com.soulgamechst.majsoul": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9774
+    },
+    "com.supercell.boombeach": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9773
+    },
+    "com.supercell.clashroyale": {
+      "match": "exact",
+      "profile": "G19",
+      "priority": 9772
+    },
+    "com.supercell.moco": {
+      "match": "exact",
+      "profile": "G20",
+      "priority": 9771
+    },
+    "com.sy.dldlhsdj": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9770
+    },
+    "com.t2ksports.nba2k20and": {
+      "match": "exact",
+      "profile": "G11",
+      "priority": 9769
+    },
+    "com.tencent.KiHan": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9768
+    },
+    "com.tencent.hhw": {
+      "match": "exact",
+      "profile": "G10",
+      "priority": 9767
+    },
+    "com.tencent.ig": {
+      "match": "exact",
+      "profile": "G07",
+      "priority": 9766
+    },
+    "com.tencent.jkchess": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9765
+    },
+    "com.tencent.letsgo": {
+      "match": "exact",
+      "profile": "G10",
+      "priority": 9764
+    },
+    "com.tencent.lolm": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9763
+    },
+    "com.tencent.mf.uam": {
+      "match": "exact",
+      "profile": "G10",
+      "priority": 9762
+    },
+    "com.tencent.nba2kx": {
+      "match": "exact",
+      "profile": "G04",
+      "priority": 9761
+    },
+    "com.tencent.nfsonline": {
+      "match": "exact",
+      "profile": "G10",
+      "priority": 9760
+    },
+    "com.tencent.ngr": {
+      "match": "exact",
+      "profile": "G07",
+      "priority": 9759
+    },
+    "com.tencent.nikke": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9758
+    },
+    "com.tencent.nrc": {
+      "match": "exact",
+      "profile": "G10",
+      "priority": 9757
+    },
+    "com.tencent.tmgp.WePop": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9756
+    },
+    "com.tencent.tmgp.bh3": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9755
+    },
+    "com.tencent.tmgp.cf": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9754
+    },
+    "com.tencent.tmgp.cod": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9753
+    },
+    "com.tencent.tmgp.codev": {
+      "match": "exact",
+      "profile": "G07",
+      "priority": 9752
+    },
+    "com.tencent.tmgp.dfjs": {
+      "match": "exact",
+      "profile": "G09",
+      "priority": 9751
+    },
+    "com.tencent.tmgp.dfm": {
+      "match": "exact",
+      "profile": "G08",
+      "priority": 9750
+    },
+    "com.tencent.tmgp.djsy": {
+      "match": "exact",
+      "profile": "G27",
+      "priority": 9749
+    },
+    "com.tencent.tmgp.dnf": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9748
+    },
+    "com.tencent.tmgp.dwrg": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9747
+    },
+    "com.tencent.tmgp.ffom": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9746
+    },
+    "com.tencent.tmgp.gnyx": {
+      "match": "exact",
+      "profile": "G04",
+      "priority": 9745
+    },
+    "com.tencent.tmgp.kr.codm": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9744
+    },
+    "com.tencent.tmgp.nz": {
+      "match": "exact",
+      "profile": "G07",
+      "priority": 9743
+    },
+    "com.tencent.tmgp.pubgmhd": {
+      "match": "exact",
+      "profile": "G04",
+      "priority": 9742
+    },
+    "com.tencent.tmgp.sgame": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9741
+    },
+    "com.tencent.tmgp.speedmobile": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9740
+    },
+    "com.tencent.tmgp.sskgame": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9739
+    },
+    "com.tencent.tmgp.supercell.boombeach": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9738
+    },
+    "com.tencent.tmgp.supercell.clash": {
+      "match": "exact",
+      "profile": "G19",
+      "priority": 9737
+    },
+    "com.tencent.tmgp.wuxia": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9736
+    },
+    "com.tencent.tmgp.yys.zqb": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9735
+    },
+    "com.tencent.toaa": {
+      "match": "exact",
+      "profile": "G04",
+      "priority": 9734
+    },
+    "com.tgc.sky.android": {
+      "match": "exact",
+      "profile": "G24",
+      "priority": 9733
+    },
+    "com.the10tons.dysmantle": {
+      "match": "exact",
+      "profile": "G04",
+      "priority": 9732
+    },
+    "com.tipsworks.android.pascalswager": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9731
+    },
+    "com.tipsworks.pascalswager": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9730
+    },
+    "com.trampolinetales.lbal": {
+      "match": "exact",
+      "profile": "G25",
+      "priority": 9729
+    },
+    "com.tungsten.fcl": {
+      "match": "exact",
+      "profile": "G11",
+      "priority": 9728
+    },
+    "com.ubisoft.rainbowsixmobile.r6.fps.pvp.shooter": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9727
+    },
+    "com.unity.mmd": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9726
+    },
+    "com.valvesoftware.cswgsm": {
+      "match": "exact",
+      "profile": "G14",
+      "priority": 9725
+    },
+    "com.valvesoftware.source": {
+      "match": "exact",
+      "profile": "G14",
+      "priority": 9724
+    },
+    "com.vng.pubgmobile": {
+      "match": "exact",
+      "profile": "G04",
+      "priority": 9723
+    },
+    "com.xd.TLglobal": {
+      "match": "exact",
+      "profile": "G10",
+      "priority": 9722
+    },
+    "com.xd.dxlzz.taptap": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9721
+    },
+    "com.xd.rotaeno.googleplay": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9720
+    },
+    "com.xd.rotaeno.tapcn": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9719
+    },
+    "com.xd.terraria": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9718
+    },
+    "com.xd.xdt": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9717
+    },
+    "com.xindong.torchlight": {
+      "match": "exact",
+      "profile": "G10",
+      "priority": 9716
+    },
+    "com.xjskp.tv.hnsc": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9715
+    },
+    "com.xzy.styx": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9714
+    },
+    "com.xzy.xgst": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9713
+    },
+    "com.yinhan.hunter": {
+      "match": "exact",
+      "profile": "G25",
+      "priority": 9712
+    },
+    "com.yongshi.tenojo": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9711
+    },
+    "com.zhanhuo.mw": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9710
+    },
+    "com.zlongame.mhmnz": {
+      "match": "exact",
+      "profile": "G03",
+      "priority": 9709
+    },
+    "com.ztgame.bob": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9708
+    },
+    "com.ztgame.yyzy": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9707
+    },
+    "com.zy.wqmt.cn": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9706
+    },
+    "gplay.punishing.grayraven": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9705
+    },
+    "jp.co.bandainamcoent.BNEI0242": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9704
+    },
+    "jp.co.craftegg.band": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9703
+    },
+    "jp.co.cygames.princessconnectredive": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9702
+    },
+    "jp.konami.masterduel": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9701
+    },
+    "jp.konami.pesam": {
+      "match": "exact",
+      "profile": "G10",
+      "priority": 9700
+    },
+    "me.mugzone.emiria": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9699
+    },
+    "me.tigerhix.cytoid": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9698
+    },
+    "minitech.miniworld": {
+      "match": "exact",
+      "profile": "G18",
+      "priority": 9697
+    },
+    "moe.low.arc": {
+      "match": "exact",
+      "profile": "G25",
+      "priority": 9696
+    },
+    "net.kdt.pojavlaunch": {
+      "match": "exact",
+      "profile": "G11",
+      "priority": 9695
+    },
+    "net.wargaming.wot.blitz": {
+      "match": "exact",
+      "profile": "G26",
+      "priority": 9694
+    },
+    "org.flos.phira": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9693
+    },
+    "org.maxbytes.lfs": {
+      "match": "exact",
+      "profile": "G25",
+      "priority": 9692
+    },
+    "sh.ppy.osulazer": {
+      "match": "exact",
+      "profile": "G17",
+      "priority": 9691
+    },
+    "supercell.brawlstars": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9690
+    },
+    "supercell.clashofclans": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9689
+    },
+    "supercell.squad": {
+      "match": "exact",
+      "profile": "G23",
+      "priority": 9688
+    },
+    "tw.sonet.allbw": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9687
+    },
+    "tw.sonet.princessconnect": {
+      "match": "exact",
+      "profile": "G01",
+      "priority": 9686
+    },
+    "xd.sce.promotion": {
+      "match": "exact",
+      "profile": "G16",
+      "priority": 9685
+    }
+  },
+  "capabilities": {
+    "schema": 2,
+    "package_match": [
+      "exact",
+      "prefix",
+      "contains"
+    ],
+    "thread_match": [
+      "exact",
+      "prefix",
+      "contains",
+      "glob"
+    ],
+    "selectors": [
+      "all",
+      "rank:1..1024"
+    ],
+    "class_consistent_mask_and_rank": true,
+    "priority": "first matching rule in descending explicit priority",
+    "score": "cumulative schedstat runtime, ticks fallback; descending score then ascending tid",
+    "target": "SM8650 CPUs 0..7",
+    "scheduler_policy": false,
+    "realtime": false,
+    "uclamp": false,
+    "nice": false,
+    "global_mode": false,
+    "per_game_mode_rt": false
+  }
+}

@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.run_receipt.json
+*.zip
+AsoulOpt
+*.elf
+*.bin
+disassembly*.txt

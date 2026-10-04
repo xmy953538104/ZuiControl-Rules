@@ -1,0 +1,19 @@
+{
+  "result": "HISTORICAL_EXTRACTOR_NOT_FOUND",
+  "scope": "Narrow script/content search in local project/tooling/research/evidence; 44 retained ZIP central directories, 1159 Python members; no ROM-image scan",
+  "surviving_helpers": [
+    {
+      "name": "parse_stripped_elf.py",
+      "sha256": "5ce2ad99585da8c92db0570a2ae5e82b29fe8269ea4faec075ffbd7208e0a365",
+      "purpose": "ELF64 little-endian PT_LOAD/PT_DYNAMIC imported-symbol/GOT parser, not game/thread rule extraction",
+      "reuse": "Program-header virtual-address mapping and dynamic-symbol lookup approach, with additional bounds checks"
+    },
+    {
+      "name": "ZUIOPT_pack_from_recovered_asoul.py",
+      "sha256": "fa14f9a3bcc28af4c35641f6b6473b6d4080f3861bffcbb9ea4190a064b1d99e",
+      "purpose": "Adapter from previously recovered CSV; not the original extractor"
+    }
+  ],
+  "original_helpers_preserved": "Local evidence only; proprietary module/binary and historical archives are not mirrored",
+  "new_extractor": "Reviewed-fingerprint bounded AArch64 constructor abstraction; unknown future input remains unqualified"
+}

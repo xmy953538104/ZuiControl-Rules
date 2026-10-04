@@ -1,0 +1,62 @@
+name: AsoulOpt derived compatibility check
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: asoulopt-derived-main
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install host disassembler
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq llvm
+      - name: Fresh resolve and bounded static analysis
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python tools/run.py
+      - name: Verify trust boundaries and publication gate
+        run: |
+          python tools/test_lab.py
+          git diff --check
+      - name: Publish derived reports only
+        run: |
+          git add output analysis history ASOULOPT_UPSTREAM_AUTOMATION_COMPATIBILITY_R1.md
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Refresh derived AsoulOpt compatibility analysis'
+            git push origin HEAD:main
+          fi
+      - name: Summarize check
+        if: always()
+        run: |
+          if [ -f .run_receipt.json ]; then
+            printf '```json\n' >> "$GITHUB_STEP_SUMMARY"
+            cat .run_receipt.json >> "$GITHUB_STEP_SUMMARY"
+            printf '\n```\n' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: derived-receipt-${{ github.run_id }}
+          include-hidden-files: true
+          path: |
+            .run_receipt.json
+            output/latest.json
+            analysis/
+          retention-days: 30
