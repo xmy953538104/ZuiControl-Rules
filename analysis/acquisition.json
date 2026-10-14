@@ -17,9 +17,11 @@
     "fetch_asoulopt.py": "e4b9e0c85071e5f4dc39a868e7cb8b514176cf4482adcc2b37863309964329d5",
     "publish_runtime.py": "fc5b0301fb087f29714f68bf4902b4537b328ed6326dab18225fcc124c04f058",
     "run.py": "07dbc7f8da60bc3b742b32e3300e5d0c35dcc83f478f549b3a84090a6251dea4",
+    "sync_gitee.py": "d4f6cb8c93b349c5517733bc02ccd520fac5e6db2ff7f1e8e38c6337753f5331",
     "test_lab.py": "3bf8fff1c23e803f8a1a443af929f5f12e8dbc5cc3c5f230fac37fc1b148411d",
     "test_publication.py": "a99aef5cc38217950072ca095efe4c0f048f35c9ac19439f43a970d109d3346f",
     "test_runtime_conversion.py": "4c8707680eea9845e3ca04a930f876ec8867ff71da34caecbde88372ca4a2d6c",
+    "test_sync.py": "6b59a3e4c53bc57daac12945ec025fc0a5a55c79e351a9420bed6f5d194ab73b",
     "zuiopt_format.py": "ac33882b12c9be05608ecbbeb1212ed212c870469bc7bb73f74e328d6afc4cc5"
   },
   "upstream": {
