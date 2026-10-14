@@ -15,6 +15,8 @@ GitHub 下载基址：
 https://raw.githubusercontent.com/xmy953538104/ZuiControl-Rules/main/output
 ```
 
+正式文件：[下载清单](https://raw.githubusercontent.com/xmy953538104/ZuiControl-Rules/main/output/latest.json)、[Schema3 规则正文](https://raw.githubusercontent.com/xmy953538104/ZuiControl-Rules/main/output/rules.conf)。使用 `latest.json` 的 `rulesSha256` 和 `rulesSize` 验证正文后再提交 Native 预览/事务，不把分析 JSON 当成规则导入。
+
 仓库发布不会自动开启设备上的在线源；App 仍由产品工程按此协议接入。Gitee 是 GitHub 源码和同一输出的镜像，当前 App 的网络 allowlist 仍是 GitHub only。
 
 ## 保留的规则语义
@@ -62,5 +64,7 @@ GitHub Secret 设置入口：
 https://github.com/xmy953538104/ZuiControl-Rules/settings/secrets/actions
 
 保存后手动运行 `Fast-forward GitHub main to Gitee` 验证首次同步。若原生自动镜像已启用，应停用其中一条自动路径，避免多个同步器并存。
+
+本轮已验证默认0/0、mode1/rt1、mode2/rt1三组转换输出与 ZuiControl 既有发布器的正文及下载清单逐字节一致。第一次 Schema3 发布为 revision1、333 个 exact 包映射、29 个 profile；上游未变化的再次运行保持 revision1，且不重复下载 ZIP。令牌首次保存后的实际推送结果仍须查看同步任务的 readback，不能只凭 Secret 存在判定成功。
 
 实际同步资格、最近两端提交和输出 Hash 以本轮交付记录为准；设置存在不等于同步测试通过。
