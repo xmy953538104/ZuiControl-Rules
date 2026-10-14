@@ -44,6 +44,7 @@ python tools/run.py --local-review --objdump /path/to/llvm-objdump
 python tools/test_lab.py
 python tools/test_runtime_conversion.py
 python tools/test_publication.py
+python tools/test_sync.py
 git diff --check
 ```
 
@@ -53,7 +54,13 @@ git diff --check
 
 GitHub `main` 是编辑与发布源，Gitee 单向跟随。同一正文、清单、revision、Hash 和源码提交应在两端一致。不要分别生成或手工修改 Gitee 的输出；两端有独立提交时先处理差异，不强制覆盖。
 
-Gitee 原生镜像管理入口：
-https://gitee.com/xmy953538104/ZuiControl-Rules/mirrors
+采用 GitHub Actions：源码 push 自动触发 `sync-gitee.yml`；规则流水线在 bot 发布提交后显式同步，避免漏掉 GITHUB_TOKEN 产生的提交。两条流水线共用串行组，Gitee 只更新 main，禁止 force push 和删除 refs；出现 Gitee 独立提交时拒绝覆盖。
+
+首次配置：在 Gitee 创建包含 `projects` 权限的专用私人令牌，保存到本 GitHub 仓库 Actions Secret，名称 `GITEE_SYNC_TOKEN`；用户名固定为 `xmy953538104`。令牌只经临时 ASKPASS 环境交给 Git，不进入 URL、Git 配置值、源文件或日志。令牌授权范围由 Gitee 提供，请只授予同步必需权限、设置合适有效期；不要使用账户密码。
+
+GitHub Secret 设置入口：
+https://github.com/xmy953538104/ZuiControl-Rules/settings/secrets/actions
+
+保存后手动运行 `Fast-forward GitHub main to Gitee` 验证首次同步。若原生自动镜像已启用，应停用其中一条自动路径，避免多个同步器并存。
 
 实际同步资格、最近两端提交和输出 Hash 以本轮交付记录为准；设置存在不等于同步测试通过。

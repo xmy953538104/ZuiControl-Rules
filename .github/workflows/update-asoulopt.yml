@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: asoulopt-derived-main
+  group: rules-main
   cancel-in-progress: false
 
 jobs:
@@ -40,6 +40,7 @@ jobs:
           python tools/test_lab.py
           python tools/test_runtime_conversion.py
           python tools/test_publication.py
+          python tools/test_sync.py
           git diff --check
       - name: Commit verified Schema3 body, manifest and derived receipts
         run: |
@@ -49,6 +50,15 @@ jobs:
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
             git commit -m 'Publish verified AsoulOpt Schema3 rules and provenance'
             git push origin HEAD:main
+          fi
+      - name: Sync published source and output to Gitee
+        env:
+          GITEE_SYNC_TOKEN: ${{ secrets.GITEE_SYNC_TOKEN }}
+        run: |
+          if [ -n "$GITEE_SYNC_TOKEN" ]; then
+            python tools/sync_gitee.py
+          else
+            echo '::warning::Gitee automatic sync is NOT CONFIGURED: add repository Secret GITEE_SYNC_TOKEN.'
           fi
       - name: Summarize check
         if: always()

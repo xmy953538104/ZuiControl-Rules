@@ -1,0 +1,23 @@
+name: Fast-forward GitHub main to Gitee
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: rules-main
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Fast-forward and verify exact Gitee main
+        env:
+          GITEE_SYNC_TOKEN: ${{ secrets.GITEE_SYNC_TOKEN }}
+        run: python tools/sync_gitee.py
