@@ -1,7 +1,10 @@
 {
-  "changed_packages": null,
-  "new_packages": null,
-  "note": "Initial lab acquisition; factory comparison is separately in zuiopt_diff.json",
-  "removed_packages": null,
-  "status": "NO_PREVIOUS_ACCEPTED_UPSTREAM"
+  "changed_packages": [],
+  "current_binary_sha256": "2ac898071119f31ee9080df4eebe2df86dbb67c7e8c4a5b405cbad6000766cf8",
+  "new_packages": [],
+  "order_changed": false,
+  "previous_binary_sha256": "2ac898071119f31ee9080df4eebe2df86dbb67c7e8c4a5b405cbad6000766cf8",
+  "removed_packages": [],
+  "runtime_semantics_comparison": "Only reviewed fingerprint semantics; unknown new fingerprints require manual reverse engineering",
+  "status": "COMPARED"
 }

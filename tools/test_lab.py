@@ -17,7 +17,8 @@ class LabTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.model = json.loads((ROOT / "analysis/latest.json").read_bytes())
-        cls.latest = json.loads((ROOT / "output/latest.json").read_bytes())
+        acquisition = ROOT / "analysis/acquisition.json"
+        cls.latest = json.loads((acquisition if acquisition.exists() else ROOT / "output/latest.json").read_bytes())
         cls.baseline = reference(ROOT)
 
     def test_semantic_diff_and_reproducibility(self):
@@ -74,7 +75,12 @@ class LabTests(unittest.TestCase):
         self.assertEqual(self.latest["status"], "ANALYSIS_ONLY")
         self.assertFalse(self.latest["lossless"])
         self.assertIsNone(self.latest["accepted_supported_subset"])
-        self.assertFalse((ROOT / "output/rules.conf").exists())
+        if (ROOT / "output/rules.conf").exists():
+            from publish_runtime import read_manifest,validate
+            model=validate(read_manifest(ROOT/'output/latest.json'),(ROOT/'output/rules.conf').read_bytes())
+            self.assertEqual(model['schema'],3)
+            self.assertEqual((model['mode'],model['rt']),(0,0))
+            self.assertTrue(all(p['runtime'][:2]==(-1,-1) for p in model['profiles'].values()))
         for folder in ("analysis", "output", "history", "reference", "tools"):
             for path in (ROOT / folder).rglob("*"):
                 if path.is_file() and "__pycache__" not in path.parts:

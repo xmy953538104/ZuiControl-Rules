@@ -86,6 +86,45 @@ def disassemble(binary_path, objdump):
     return instructions
 
 
+def kana_runtime_masks(elf, ins, signature=0x98):
+    """Interpret the fingerprint-bound upstream mask branch, not ZUIopt's presets."""
+    require(sha256(elf.data) == QUALIFIED_BINARY, "unknown Kana runtime mask code")
+    results = {}
+    for mode in range(3):
+        regs = {f"x{i}": 0 for i in range(31)}
+        regs.update(x20=mode, x25=signature, x19=12, x22=0x10000)
+        memory, trace, compare, pc = {}, [], 0, 0x5674
+        def value(s):
+            if s.startswith('#'): return int(s[1:], 0)
+            if s in ('wzr', 'xzr'): return 0
+            return regs['x'+s[1:] if s.startswith('w') else s]
+        def put(s, v):
+            regs['x'+s[1:] if s.startswith('w') else s] = v & ((1 << (32 if s.startswith('w') else 64))-1)
+        while pc != 0x594c:
+            require(0x5674 <= pc < 0x594c and len(trace) < 100, "runtime mask path bound")
+            op, args = ins[pc]; trace.append(hex(pc)); next_pc = pc+4
+            fields = [x.strip() for x in args.split(',')]
+            if op == 'cmp': compare = value(fields[0])-value(fields[1])
+            elif op == 'mov': put(fields[0], value(fields[1]))
+            elif op == 'b': next_pc = int(args, 0)
+            elif op.startswith('b.'):
+                condition = {'eq':compare == 0, 'ne':compare != 0, 'gt':compare > 0, 'le':compare <= 0}.get(op[2:])
+                require(condition is not None, "unknown mask condition "+op)
+                if condition: next_pc = int(args, 0)
+            elif op == 'madd': put(fields[0], value(fields[1])*value(fields[2])+value(fields[3]))
+            elif op == 'orr': put(fields[0], value(fields[1]) | value(fields[2]))
+            elif op == 'str':
+                m = re.fullmatch(r'(\w+), \[(\w+)(?:, (#0x[0-9a-f]+))?\]', args)
+                require(m is not None, "unknown mask store")
+                memory[value(m[2])+(value(m[3]) if m[3] else 0)] = value(m[1])
+            else: raise ValueError("unmodeled original mask instruction "+op)
+            pc = next_pc
+        address = regs['x22']+mode*12
+        pair, c2 = memory[address], memory[address+8]
+        results[str(mode)] = {'general':pair & 0xffffffff, 'C1':pair >> 32, 'C2':c2, 'trace':trace}
+    return results
+
+
 def initializer(elf, ins):
     # Fake zero-initialized stack/heap: C++ tree internals are represented by pending.
     regs = {f"x{i}": 0 for i in range(31)} | {"sp": 0x1000000, "x29": 0x1000800}
@@ -249,6 +288,7 @@ def extract(binary, workdir, objdump):
                 templates=templates, packages=packages, imports=imports, config_formats=formats,
                 default_category=0, thread_precedence="ascending string-pointer key; first strstr hit",
                 package_precedence="linked-list head first; reverse constructor order",
+                runtime_masks_sm8650=kana_runtime_masks(elf, ins),
                 semantic_evidence=dict(package_match="0x7788..0x77ac (strstr/list traversal)",
                                        thread_match="0x7910..0x7980 (strstr/tree traversal)",
                                        ranking="0x4e4c..0x4f18 + 0x513c..0x5204",

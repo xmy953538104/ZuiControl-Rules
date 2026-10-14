@@ -1,0 +1,17 @@
+{
+  "source_repository": "xmy953538104/ZuiControl",
+  "source_commit": "d54bbee0215989b3f4a2737aff30d315f590eaa3",
+  "source_path": "scripts/rules/ZUIOPT_rule_pack.py",
+  "source_sha256": "5f449a1ad7e238c59448da22bbb846dd9747a09f843a5d423fe8b25a3ba9ae8d",
+  "extracted_functions": [
+    "cpu_text",
+    "dump_rules",
+    "mask",
+    "need",
+    "parse_rules",
+    "validate_glob"
+  ],
+  "consumer": "RuleUpstreamFetcher: manifest schema2, rulesSchema3, latest.json + rules.conf",
+  "targetSoC": "SM8650",
+  "targetTopology": "0-7"
+}

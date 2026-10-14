@@ -1,7 +1,10 @@
-name: AsoulOpt derived compatibility check
+name: AsoulOpt Schema3 rules publication
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['tools/**', 'reference/schema3_protocol.json', '.github/workflows/update-asoulopt.yml']
   schedule:
     - cron: '17 3 * * 0'
 
@@ -20,6 +23,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -34,14 +38,16 @@ jobs:
       - name: Verify trust boundaries and publication gate
         run: |
           python tools/test_lab.py
+          python tools/test_runtime_conversion.py
+          python tools/test_publication.py
           git diff --check
-      - name: Publish derived reports only
+      - name: Commit verified Schema3 body, manifest and derived receipts
         run: |
-          git add output analysis history ASOULOPT_UPSTREAM_AUTOMATION_COMPATIBILITY_R1.md
+          git add output analysis history
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'Refresh derived AsoulOpt compatibility analysis'
+            git commit -m 'Publish verified AsoulOpt Schema3 rules and provenance'
             git push origin HEAD:main
           fi
       - name: Summarize check
@@ -60,5 +66,6 @@ jobs:
           path: |
             .run_receipt.json
             output/latest.json
+            output/rules.conf
             analysis/
           retention-days: 30

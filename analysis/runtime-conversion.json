@@ -1,0 +1,91 @@
+{
+  "ambiguous_matches": [
+    {
+      "candidates": [
+        "gplay.punishing.grayraven",
+        "com.herogame.gplay.punishing.grayraven.tw"
+      ],
+      "chosen": "gplay.punishing.grayraven",
+      "package": "com.herogame.gplay.punishing.grayraven.tw"
+    },
+    {
+      "candidates": [
+        "com.netease.nshmhmt",
+        "com.netease.nshm"
+      ],
+      "chosen": "com.netease.nshmhmt",
+      "package": "com.netease.nshmhmt"
+    },
+    {
+      "candidates": [
+        "com.pubg.newstate",
+        "com.pubg"
+      ],
+      "chosen": "com.pubg.newstate",
+      "package": "com.pubg.newstate"
+    },
+    {
+      "candidates": [
+        "com.tencent.tmgp.codev",
+        "com.tencent.tmgp.cod"
+      ],
+      "chosen": "com.tencent.tmgp.codev",
+      "package": "com.tencent.tmgp.codev"
+    }
+  ],
+  "binary_sha256": "2ac898071119f31ee9080df4eebe2df86dbb67c7e8c4a5b405cbad6000766cf8",
+  "converter_rules_sha256": "aa0b06e09b96b1d2301c90cdc4677cee9bb155591b3d4f5d45b978d9eefc5217",
+  "device_feed_enabled": false,
+  "expanded_packages": 333,
+  "expansion_policy": "Original first strstr wins; recompute on package install/uninstall/update",
+  "installed_inventory": [],
+  "intentional_differences": [
+    "No arbitrary representative fallback for empty categories",
+    "Owned original scheduler/global restore and finite budget",
+    "Module service.sh side effects excluded"
+  ],
+  "markers": {
+    "T01": "none",
+    "T02": "none",
+    "T03": "none",
+    "T04": "none",
+    "T05": "none",
+    "T06": "none",
+    "T07": "none",
+    "T08": "none",
+    "T09": "none",
+    "T10": "none",
+    "T11": "none",
+    "T12": "none",
+    "T13": "none",
+    "T14": "none",
+    "T15": "none",
+    "T16": "none",
+    "T17": "none",
+    "T18": "none",
+    "T19": "none",
+    "T20": "none",
+    "T21": "none",
+    "T22": "none",
+    "T23": "none",
+    "T24": "none",
+    "T25": "dummy",
+    "T26": "none",
+    "T27": "none",
+    "T28": "none",
+    "T29": "double"
+  },
+  "model_sha256": "88159c4d344e31fbbb7c429694b1ef0bcb6971e868a433255b6a063d749335ec",
+  "online_feed_enabled": false,
+  "publication": "CLOUD_SCHEMA3_OWNER_AUTHORIZED",
+  "required_capabilities": [
+    "category-ranking",
+    "marker-double",
+    "marker-dummy",
+    "mode0",
+    "owned-rt-recovery",
+    "runtime-inheritance",
+    "schema3"
+  ],
+  "rules_schema": 3
+}
